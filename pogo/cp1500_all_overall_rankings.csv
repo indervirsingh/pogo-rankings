@@ -1,4 +1,4 @@
- Pokemon,Score,Dex,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,CP,Fast Move,Charged Move 1,Charged Move 2,Charged Move 1 Count,Charged Move 2 Count,Buddy Distance,Charged Move Cost
+Pokemon,Score,Dex,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,CP,Fast Move,Charged Move 1,Charged Move 2,Charged Move 1 Count,Charged Move 2 Count,Buddy Distance,Charged Move Cost
 Registeel,96.9,379,steel,none,95.5,189.6,130,2353244,23,1499,Lock On,Focus Blast,Zap Cannon,15,16,20,100000
 Stunfisk (Galarian),96.4,618,ground,steel,101.8,127.9,169,2200089,26.5,1497,Mud Shot,Rock Slide,Earthquake,5,8,5,75000
 Scrafty,95.6,560,dark,fighting,110.4,155.4,117,2007526,24.5,1489,Counter,Foul Play,Power-Up Punch,7,5,3,50000
