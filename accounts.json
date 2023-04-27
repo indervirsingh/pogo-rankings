@@ -1,25 +1,39 @@
 {
-    "accounts": {
-
-        "username": "iGotThatDAWG"
-        "email":    "teamInstinctPOGO916@gmail.com",
-        "password": "easy4indi",
-        "team": "Instinct",
-        "birthday":   "April 26, 2023"
-    },
-    {
-        "username": "indi32332",
-        "email":    "indisinghpogo@gmail.com",
-        "password": "easy4indi",
-        "team": "Instinct",
-        "birthday":   "need to update"
-    },
-    {
-        "username": "indi916",
-        "email":    "indi916pogo@gmail.com",
-        "password": "PKmaster!*1995",
-        "team": "Valor",
-        "birthday":   "need to update"
-    }
-    
+    "accounts": [
+        {
+            "username": "iGotThatDAWG",
+            "email":    "teamInstinctPOGO916@gmail.com",
+            "password": "easy4indi",
+            "team": "Instinct",
+            "birthday":   "April 26, 2023"
+        },
+        {
+            "username": "indi32332",
+            "email":    "indisinghpogo@gmail.com",
+            "password": "easy4indi",
+            "team": "Instinct",
+            "birthday":   "need to update"
+        },
+        {
+            "username": "indi916",
+            "email":    "indi916pogo@gmail.com",
+            "password": "PKmaster!*1995",
+            "team": "Valor",
+            "birthday":   "need to update"
+        },
+        {
+            "username": "eZpZ2023",
+            "email":    "pogomaster916@gmail.com",
+            "password": "easy4indi",
+            "team": "Instinct",
+            "birthday":   "need to update"
+        },
+        {
+            "username": "Draco95624",
+            "email":    "pogo916acc@gmail.com",
+            "password": "easy4indi",
+            "team": "Instinct",
+            "birthday":   "need to update"
+        }
+    ]
 }
