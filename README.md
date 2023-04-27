@@ -6,7 +6,7 @@
 > Ultra League: ==2500CP==
 
 **Tasks**
--  [x] Convert csv files to table
+- [x] Convert csv files to table
 - [ ] Design/implement JSON Schema
 - [ ] Import CSV data to JSON
 - [ ] Initialize DB (Mongo vs SQL)
