@@ -2,13 +2,17 @@
 
 Tier list of pokemon for PVP rankings:
 
-Great League: < 1500CP
+> Great League: < 1500CP
+> Ultra League: < 2500CP  
 
-Ultra League: < 2500CP 
-
-TODO:
+**Tasks**
 Convert csv files to table [COMPLETED]
 
-VIP key: b05f-008d-b10b-486e-bfdb-c466-9a73-3a0c
+
+
+
+
+**VIP key**:
+`b05f-008d-b10b-486e-bfdb-c466-9a73-3a0c`
 
 
