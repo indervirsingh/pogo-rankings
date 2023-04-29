@@ -56,5 +56,13 @@
             "birthday":     "April 28, 2023",
             "country":      "Australia"
         },
+        {
+            "username":     "ny990",
+            "email":        "teamInstinctPOGO.NY@gmail.com",
+            "password":     "easy4indi",
+            "team":         "Instinct",
+            "birthday":     "April 29, 2023",
+            "country":      "Spain"
+        },
     ]
 }
