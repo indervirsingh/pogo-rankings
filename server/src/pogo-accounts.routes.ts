@@ -18,3 +18,28 @@ pogoAccountsRouter.get("/", async (_req, res) => {
 })
 
 
+// Gets a pogo account by id
+
+pogoAccountsRouter.get("/:id", async (req, res) => {
+    try {
+        const id = req?.params?.id
+
+        // ObjectId() converts the string id to an ObjectId
+        const query = { _id: new mongodb.ObjectId(id) }
+        // findOne() returns the pogoAccount with the given id
+        const pogoAccount = await collections.pogoAccounts.findOne(query)
+    
+
+        if (pogoAccount) {
+            res.status(200).send(pogoAccount)
+        } else {
+            res.status(404).send(`Failed to find a pogo account with id: ${id}`)
+        }
+
+    } catch (error) {
+        res.status(500).send(`Failed to find a pogo account with id: ${req?.params?.id}`)
+    }
+
+})
+
+
