@@ -2,6 +2,7 @@ import * as dotenv from "dotenv"
 import cors from "cors"
 import express from "express"
 import { connectToDatabase } from "./database"
+import { pogoAccountsRouter } from "./pogo-accounts.routes"
 
 
 // Load environment variables from the .env file, where the ATLAS_URI is configured
