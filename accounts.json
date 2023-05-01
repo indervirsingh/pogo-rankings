@@ -64,5 +64,13 @@
             "birthday":     "April 29, 2023",
             "country":      "Spain"
         },
+        {
+            "username":     "sackillerinst",
+            "email":        "teamInstinctPOGO.sac@gmail.com",
+            "password":     "easy4indi",
+            "team":         "Instinct",
+            "birthday":     "April 30, 2023",
+            "country":      "Sacramento"
+        }
     ]
 }
