@@ -42,4 +42,25 @@ pogoAccountsRouter.get("/:id", async (req, res) => {
 
 })
 
+pogoAccountsRouter.post("/", async (req, res) => {
+    try {
+        const pogoAccount = req?.body
+
+        // insertOne() inserts the pogoAccount into the database
+        const result = await collections.pogoAccounts.insertOne(pogoAccount)
+
+        // The insertedId property contains the id of the inserted document
+        const insertedId = result?.insertedId
+
+        if (insertedId) {
+            res.status(201).send(`Successfully created a pogo account with id: ${insertedId}`)
+        } else {
+            res.status(500).send(`Failed to create a pogo account`)
+        }
+
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
 
