@@ -7,9 +7,10 @@
 
 **Tasks**
 - [x] Convert csv files to table
-- [ ] Design/implement JSON Schema
-- [ ] Import CSV data to JSON
-- [ ] Implement Database
+- [x] Design JSON Schema (MongoDB)
+- [ ] Implement Database and connect to server
+    - set an ATLAS_URI environment variable (contains the connection string)
+    - Build RESTful API router (Express) & implement endpoints for pogoAccounts ('GET', 'POST', 'PUT', 'DELETE')
 - [ ] Categorize data, implement search/sort options
 
 
