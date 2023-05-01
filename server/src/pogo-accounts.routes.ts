@@ -93,4 +93,28 @@ pogoAccountsRouter.put("/:id", async (req, res) => {
 })
 
 
+// Deletes a pogoAccount object in the database
+
+pogoAccountsRouter.delete("/:id", async (req, res) => {
+    try {
+        // Extract & store data properly
+        const pogoAccount = req?.body
+        const { id, username, email, password, team, country, birthday } = pogoAccount
+
+        // ObjectId() converts the string id to an ObjectId
+        const query = { _id: new mongodb.ObjectId(id) }
+        // findOneAndDelete() finds the pogoAccount with the given id and deletes it
+        const result = await collections.pogoAccounts.findOneAndDelete(query)
+
+        if (result?.value) {
+            res.status(200).send(`Successfully deleted ${pogoAccount}`)
+        } else {
+            res.status(404).send(`Failed to find account id: ${id}`)
+        }
+
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+})
+
 
