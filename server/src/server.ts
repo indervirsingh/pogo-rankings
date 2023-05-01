@@ -7,9 +7,13 @@ import { connectToDatabase } from "./database"
 // Load environment variables from the .env file, where the ATLAS_URI is configured
 dotenv.config()
 
+// ATLAS_URI
+//const uri = "mongodb+srv://indi:<kQt4ztXnCJnYj1f6>@pogoaccountscluster.oxqfol2.mongodb.net/?retryWrites=true&w=majority"
+
 const { ATLAS_URI } = process.env
 
-if (!ATLAS_URI) {
+
+if (! ATLAS_URI) {
     console.error("No ATLAS_URI environment variable has been defined in config.env")
     process.exit(1)
 }
