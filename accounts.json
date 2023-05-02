@@ -72,6 +72,14 @@
             "birthday":     "April 30, 2023",
             "country":      "Sacramento"
         },
+        {
+            "username":     "headsup7up17313",
+            "email":        "teamValorPOGO.SF@gmail.com",
+            "password":     "easy4indi",
+            "team":         "Valor",
+            "birthday":     "May 1, 2023",
+            "country":      "San Francisco"
+        },
     ]
 }
 
