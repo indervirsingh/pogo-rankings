@@ -30,7 +30,14 @@ export class PogoAccountsService {
     return this.httpClient.get<PogoAccounts>(`${this.pogoAccountsUrl}/${id}`)
   }
 
-  
+  public createPogoAccount(pogoAccount: PogoAccounts): Observable<string> {
+    return this.httpClient.post(`${this.pogoAccountsUrl}/pogo-accounts/api`, pogoAccount)
+      .pipe(
+        tap(() => {
+          this.refreshPogoAccounts()
+        })
+      )
+  }
 
 
 }
