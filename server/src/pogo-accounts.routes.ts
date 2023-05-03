@@ -20,7 +20,7 @@ pogoAccountsRouter.get("/api", async (_req, res) => {
 
 // Gets a pogo account by id
 
-pogoAccountsRouter.get("/api:id", async (req, res) => {
+pogoAccountsRouter.get("/api/:id", async (req, res) => {
     try {
         const id = req?.params?.id
 
@@ -68,7 +68,7 @@ pogoAccountsRouter.post("/api", async (req, res) => {
 
 // Updates a pogoAccount object in the database
 
-pogoAccountsRouter.put("/api:id", async (req, res) => {
+pogoAccountsRouter.put("/api/:id", async (req, res) => {
     try {
 
         // Extract & store data properly
