@@ -42,6 +42,23 @@ import { PogoAccountsService } from '../pogo-accounts.service'
   ]
 })
 
-export class PogoAccountsListComponent {
+export class PogoAccountsListComponent implements OnInit {
+  public pogoAccounts$: Observable<PogoAccounts[]> = new Observable()
+
+  constructor(private pogoAccountsService: PogoAccountsService) {  }
+
+  ngOnInit(): void {
+    this.fetchPogoAccounts()
+  }
+
+  deletePogoAccount(id: string) {
+    this.pogoAccountsService.deletePogoAccount(id).subscribe({
+      next: () => this.fetchPogoAccounts()
+    })
+  }
+
+  private fetchPogoAccounts(): void {
+    this.pogoAccounts$ = this.pogoAccountsService.getPogoAccounts()
+  }
 
 }
