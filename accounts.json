@@ -80,6 +80,22 @@
             "birthday":     "May 1, 2023",
             "country":      "San Francisco"
         },
+        {
+            "username":     "instinct4lifeSF",
+            "email":        "teamMysticPOGO.SF@gmail.com",
+            "password":     "easy4indi",
+            "team":         "Mystic",
+            "birthday":     "May 2, 2023",
+            "country":      "San Francisco"
+        },
+        {
+            "username":     "mystic4ever158",
+            "email":        "teamMysticPOGO.SPAIN@gmail.com",
+            "password":     "easy4indi",
+            "team":         "Mystic",
+            "birthday":     "May 2, 2023",
+            "country":      "Spain"
+        }
     ]
 }
 
