@@ -73,22 +73,23 @@ pogoAccountsRouter.put("/api/:id", async (req, res) => {
 
         // Extract & store data properly
         const pogoAccount = req?.body
-        const { id, username, email, password, team, country, birthday } = pogoAccount
-
+        const id = req?.params?.id
 
         // ObjectId() converts the string id to an ObjectId
         const query = { _id: new mongodb.ObjectId(id) }
-        // findOneAndUpdate() finds the pogoAccount with the given id and updates it
-        const result = await collections.pogoAccounts.findOneAndUpdate(query, pogoAccount)
+        // updateOne() finds the pogoAccount with the given id and updates it
+        const result = await collections.pogoAccounts.updateOne(query, { $set: pogoAccount})
 
-        if (result?.value) {
+        if (result && result.matchedCount) {
             res.status(200).send(`Successfully updated ${pogoAccount}`)
-        } else {
+        } else if (!result.matchedCount) {
             res.status(404).send(`Failed to find account id: ${id}`)
+        } else {
+            res.status(304).send(`Failed to update account id: ${id}`)
         }
 
     } catch (error) {
-        res.status(500).send(error.message)
+        res.status(400).send(error.message)
     }
 })
 
