@@ -41,6 +41,4 @@ export class PogoAccountsService {
   public deletePogoAccount(id: string): Observable<string> {
     return this.httpClient.delete(`${this.pogoAccountsUrl}/pogo-accounts/${id}`, { responseType: 'text' })
   }
-  
-
 }
