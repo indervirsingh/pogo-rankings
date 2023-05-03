@@ -34,7 +34,8 @@ export class PogoAccountsService {
     return this.httpClient.post(`${this.pogoAccountsUrl}/pogo-accounts`, pogoAccount, { responseType: 'text' })
   }
 
-
+  public updatePogoAccount(id: string, pogoAccount: PogoAccounts): Observable<string> {
+    return this.httpClient.put(`${this.pogoAccountsUrl}/pogo-accounts/${id}`, pogoAccount, { responseType: 'text' })
 }
 
 
