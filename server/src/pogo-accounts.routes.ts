@@ -6,7 +6,7 @@ export const pogoAccountsRouter = express.Router()
 pogoAccountsRouter.use(express.json())
 
 // The route is "/" because all the endpoints from this file are registered under 'pogo-accounts' route
-pogoAccountsRouter.get("/api", async (_req, res) => {
+pogoAccountsRouter.get("/", async (_req, res) => {
     try {
         // The find() method works because we pass an empty object and get all data, 
         // The toArray() method will convert the cursor to an array
@@ -20,7 +20,7 @@ pogoAccountsRouter.get("/api", async (_req, res) => {
 
 // Gets a pogo account by id
 
-pogoAccountsRouter.get("/api/:id", async (req, res) => {
+pogoAccountsRouter.get("/:id", async (req, res) => {
     try {
         const id = req?.params?.id
 
@@ -44,7 +44,7 @@ pogoAccountsRouter.get("/api/:id", async (req, res) => {
 
 // Creates a pogoAccount object in the database
 
-pogoAccountsRouter.post("/api", async (req, res) => {
+pogoAccountsRouter.post("/", async (req, res) => {
     try {
         const pogoAccount = req?.body
 
@@ -68,24 +68,22 @@ pogoAccountsRouter.post("/api", async (req, res) => {
 
 // Updates a pogoAccount object in the database
 
-pogoAccountsRouter.put("/api/:id", async (req, res) => {
+pogoAccountsRouter.put("/:id", async (req, res) => {
+    res.send(req?.params)
     try {
 
-        // Get URL and parse to extract more efficiently
-        const parsedUrl = new URL(window.location.href)
-        
         // Extract pogoAccount data to update via body
-        const pogoAccount = req?.body
-        // Extract ID via URL param /?id=
-        const id = parsedUrl.searchParams.get("id")
+        const updated_pogoAccount = req?.body
+        // Extract id via params
+        const id = req?.params?.id
 
         // ObjectId() converts the string id to an ObjectId
         const query = { _id: new mongodb.ObjectId(id) }
         // updateOne() finds the pogoAccount with the given id and updates it
-        const result = await collections.pogoAccounts.updateOne(query, { $set: pogoAccount})
+        const result = await collections.pogoAccounts.updateOne(query, { $set: updated_pogoAccount })
 
         if (result && result.matchedCount) {
-            res.status(200).send(`Successfully updated ${pogoAccount.username}`)
+            res.status(200).send(`Successfully updated ${updated_pogoAccount.username}`)
         } else if (!result.matchedCount) {
             res.status(404).send(`Failed to find account id: ${id}`)
         } else {
@@ -99,7 +97,7 @@ pogoAccountsRouter.put("/api/:id", async (req, res) => {
 
 // Deletes a pogoAccount object in the database
 
-pogoAccountsRouter.delete("/api/:id", async (req, res) => {
+pogoAccountsRouter.delete("/:id", async (req, res) => {
     try {
         // Extract & store data properly
         const id = req?.params?.id
