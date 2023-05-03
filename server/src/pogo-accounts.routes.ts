@@ -93,7 +93,6 @@ pogoAccountsRouter.put("/api/:id", async (req, res) => {
     }
 })
 
-
 // Deletes a pogoAccount object in the database
 
 pogoAccountsRouter.delete("/api/:id", async (req, res) => {
