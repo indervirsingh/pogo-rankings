@@ -8,5 +8,33 @@ import { PogoAccounts } from './pogo-accounts'
 })
 export class PogoAccountsService {
 
-  constructor() { }
+  private pogoAccountsUrl = 'http://localhost:5200/api'
+  private pogoAccounts$: Subject<PogoAccounts[]> = new Subject()
+
+
+  constructor(private httpClient: HttpClient) { }
+
+  private refreshPogoAccounts() {
+    this.httpClient.get<PogoAccounts[]>(this.pogoAccountsUrl)
+      .subscribe(pogoAccounts => {
+        this.pogoAccounts$.next(pogoAccounts)
+      })
+  }
+
+  public getPogoAccounts(): Subject<PogoAccounts[]> {
+    this.refreshPogoAccounts()
+    return this.pogoAccounts$
+  }
+
+  public getPogoAccount(id: string): Observable<PogoAccounts> {
+    return this.httpClient.get<PogoAccounts>(`${this.pogoAccountsUrl}/${id}`)
+  }
+
+  
+
+
+}
+
+
+
 }
