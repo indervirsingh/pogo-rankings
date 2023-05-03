@@ -71,9 +71,13 @@ pogoAccountsRouter.post("/api", async (req, res) => {
 pogoAccountsRouter.put("/api/:id", async (req, res) => {
     try {
 
-        // Extract & store data properly
+        // Get URL and parse to extract more efficiently
+        const parsedUrl = new URL(window.location.href)
+        
+        // Extract pogoAccount data to update via body
         const pogoAccount = req?.body
-        const id = req?.params?.id
+        // Extract ID via URL param /?id=
+        const id = parsedUrl.searchParams.get("id")
 
         // ObjectId() converts the string id to an ObjectId
         const query = { _id: new mongodb.ObjectId(id) }
@@ -81,7 +85,7 @@ pogoAccountsRouter.put("/api/:id", async (req, res) => {
         const result = await collections.pogoAccounts.updateOne(query, { $set: pogoAccount})
 
         if (result && result.matchedCount) {
-            res.status(200).send(`Successfully updated ${pogoAccount}`)
+            res.status(200).send(`Successfully updated ${pogoAccount.username}`)
         } else if (!result.matchedCount) {
             res.status(404).send(`Failed to find account id: ${id}`)
         } else {
