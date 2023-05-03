@@ -6,7 +6,7 @@ export const pogoAccountsRouter = express.Router()
 pogoAccountsRouter.use(express.json())
 
 // The route is "/" because all the endpoints from this file are registered under 'pogo-accounts' route
-pogoAccountsRouter.get("/", async (_req, res) => {
+pogoAccountsRouter.get("/api", async (_req, res) => {
     try {
         // The find() method works because we pass an empty object and get all data, 
         // The toArray() method will convert the cursor to an array
@@ -20,7 +20,7 @@ pogoAccountsRouter.get("/", async (_req, res) => {
 
 // Gets a pogo account by id
 
-pogoAccountsRouter.get("/:id", async (req, res) => {
+pogoAccountsRouter.get("/api:id", async (req, res) => {
     try {
         const id = req?.params?.id
 
@@ -44,7 +44,7 @@ pogoAccountsRouter.get("/:id", async (req, res) => {
 
 // Creates a pogoAccount object in the database
 
-pogoAccountsRouter.post("/", async (req, res) => {
+pogoAccountsRouter.post("/api", async (req, res) => {
     try {
         const pogoAccount = req?.body
 
@@ -68,7 +68,7 @@ pogoAccountsRouter.post("/", async (req, res) => {
 
 // Updates a pogoAccount object in the database
 
-pogoAccountsRouter.put("/:id", async (req, res) => {
+pogoAccountsRouter.put("/api:id", async (req, res) => {
     try {
 
         // Extract & store data properly
