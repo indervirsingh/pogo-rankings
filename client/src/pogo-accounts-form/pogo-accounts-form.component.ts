@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 
@@ -79,7 +79,7 @@ import { BehaviorSubject } from 'rxjs';
     }`
   ]
 })
-export class PogoAccountsFormComponent {
+export class PogoAccountsFormComponent implements OnInit {
   @Input()
   initialState: BehaviorSubject<PogoAccount> = new BehaviorSubject<PogoAccount>({})
 
