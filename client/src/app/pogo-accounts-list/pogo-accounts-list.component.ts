@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Observable } from 'rxjs'
-import { PogoAccounts } from '../pogo-accounts'
-import { PogoAccountsService } from '../pogo-accounts.service'
+import { PogoAccounts } from '../../pogo-accounts'
+import { PogoAccountsService } from '../../pogo-accounts.service'
 
 // Need to fix module/folder import
 
