@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PogoAccountsListComponent } from './pogo-accounts-list/pogo-accounts-list.component';
 import { PogoAccountsFormComponent } from '../pogo-accounts-form/pogo-accounts-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PogoAccountsFormComponent } from '../pogo-accounts-form/pogo-accounts-f
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
