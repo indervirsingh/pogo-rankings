@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
         <label for="username">username</label>
       </div>
 
-      <div *ngIf="username.invalid && (username.dirt || username.touched)" class="alert alert-danger">
+      <div *ngIf="username.invalid && (username.diry || username.touched)" class="alert alert-danger">
 
         <div *ngIf="username.errors?.['required']">
           Username is required.
@@ -18,7 +18,7 @@ import { Component } from '@angular/core';
         <div *ngIf="username.errors?.['minlength']">
           Username must be at least 3 characters long.
         </div>
-        
+
       </div>
 
       <div class="form-floating mb-3">
