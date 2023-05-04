@@ -24,9 +24,9 @@ import { Component } from '@angular/core';
         </div>
 
       <!-- Email section -->
-        <div class="form-floating mb-3">
-          <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" required>
-          <label for="email">Email</label>
+        <div class="mb-3">
+            <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email" required>
+            <label for="email">Email</label>
         </div>
 
         <!-- Error handling for email attribute -->
