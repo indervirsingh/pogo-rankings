@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
 import { PogoAccounts } from '../../pogo-accounts'
 import { PogoAccountsService } from '../../pogo-accounts.service'
@@ -27,9 +27,10 @@ import { PogoAccountsService } from '../../pogo-accounts.service'
           <td>{{ pogoAccount.team }}</td>
           <td>{{ pogoAccount.country }}</td>
           <td>{{ pogoAccount.birthday }}</td>
-              <button class="btn btn-primary me-1" [routerLink]="['edit/', pogoAccount._id]">Edit</button>
-              <button class="btn btn-danger" (click)="deletePogoAccount(pogoAccount._id || '')">Delete</button>
-          </td>
+          <td>
+            <button class="btn btn-primary me-1" [routerLink]="['edit/', pogoAccount._id]">Edit</button>
+            <button class="btn btn-danger" (click)="deletePogoAccount(pogoAccount._id || '')">Delete</button>
+          </td>  
         </tr>
       </tbody>
     </table>
