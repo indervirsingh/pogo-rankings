@@ -8,13 +8,15 @@ import { PogoAccountsListComponent } from './pogo-accounts-list/pogo-accounts-li
 import { PogoAccountsFormComponent } from './pogo-accounts-form/pogo-accounts-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AddPogoAccountComponent } from './add-pogo-account/add-pogo-account.component';
+import { EditPogoAccountComponent } from './edit-pogo-account/edit-pogo-account.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PogoAccountsListComponent,
     PogoAccountsFormComponent,
-    AddPogoAccountComponent
+    AddPogoAccountComponent,
+    EditPogoAccountComponent
   ],
   imports: [
     BrowserModule,
