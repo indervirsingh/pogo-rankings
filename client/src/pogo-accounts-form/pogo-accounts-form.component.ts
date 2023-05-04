@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-pogo-accounts-form',
@@ -68,12 +70,47 @@ import { Component } from '@angular/core';
       <!-- End Sections -->
       
     </form>
-
-
   `,
   styles: [
+    `.pogo-accounts-form {
+      max-width: 560px;
+      margin-left auto;
+      margin-right: auto;
+    }`
   ]
 })
 export class PogoAccountsFormComponent {
+  @Input()
+  initialState: BehaviorSubject<PogoAccount> = new BehaviorSubject<PogoAccount>({})
+
+  @Output()
+  formValuesChanged = new EventEmitter<PogoAccount>()
+
+  @Output()
+  formSubmitted = new EventEmitter<PogoAccount>()
+
+  pogoAccountsForm: FormGroup = new FormGroup({})
+
+  constructor(private fb: FormBuilder) { }
+
+  get username() { return this.pogoAccountsForm.get('username') }
+  get email() { return this.pogoAccountsForm.get('email') }
+  get team() { return this.pogoAccountsForm.get('team') }
+
+  ngOnInit() {
+    this.initialState.subscribe(pogoAccount => {
+      this.pogoAccountsForm = this.fb.group({
+        username: [pogoAccount.username, [ Validators.required, Validators.minLength(3) ] ],
+        email: [pogoAccount.email, [ Validators.required, Validators.email ] ],
+        team: [pogoAccount.team, [ Validators.required ] ]
+      })
+    })
+
+    this.pogoAccountsForm.valueChanges.subscribe( (val) => { this.formValuesChanged.emit(val) } )
+  }
+
+  submitForm() {
+    this.formSubmitted.emit(this.pogoAccountsForm.value)
+  }
 
 }
