@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { Observable } from 'rxjs'
-import { PogoAccounts } from '../../pogo-accounts'
-import { PogoAccountsService } from '../../pogo-accounts.service'
+import { PogoAccounts } from '../pogo-accounts'
+import { PogoAccountsService } from '../pogo-accounts.service'
 
 
 @Component({

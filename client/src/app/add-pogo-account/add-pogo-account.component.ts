@@ -1,7 +1,7 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
-import { PogoAccounts } from 'src/pogo-accounts'
-import { PogoAccountsService } from 'src/pogo-accounts.service'
+import { PogoAccounts } from 'src/app/pogo-accounts'
+import { PogoAccountsService } from 'src/app/pogo-accounts.service'
 
 @Component({
   selector: 'app-add-pogo-account',
