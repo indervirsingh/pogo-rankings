@@ -75,7 +75,7 @@ import { PogoAccounts } from '../pogo-accounts';
   styles: [
     `.pogo-accounts-form {
       max-width: 560px;
-      margin-left auto;
+      margin-left: auto;
       margin-right: auto;
     }`
   ]
