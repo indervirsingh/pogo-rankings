@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
+import { PogoAccounts } from '../pogo-accounts';
 
 @Component({
   selector: 'app-pogo-accounts-form',
@@ -81,13 +82,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class PogoAccountsFormComponent implements OnInit {
   @Input()
-  initialState: BehaviorSubject<PogoAccount> = new BehaviorSubject<PogoAccount>({})
+  initialState: BehaviorSubject<PogoAccounts> = new BehaviorSubject<PogoAccounts>({})
 
   @Output()
-  formValuesChanged = new EventEmitter<PogoAccount>()
+  formValuesChanged = new EventEmitter<PogoAccounts>()
 
   @Output()
-  formSubmitted = new EventEmitter<PogoAccount>()
+  formSubmitted = new EventEmitter<PogoAccounts>()
 
   pogoAccountsForm: FormGroup = new FormGroup({})
 
