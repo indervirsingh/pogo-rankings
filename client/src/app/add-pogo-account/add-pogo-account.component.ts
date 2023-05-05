@@ -29,7 +29,7 @@ export class AddPogoAccountComponent {
           alert("Failed to create POGO account")
           console.log(err)
         }
-    })
+      })
   }
 
 }
