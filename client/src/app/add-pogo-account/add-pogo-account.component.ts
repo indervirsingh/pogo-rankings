@@ -23,7 +23,7 @@ export class AddPogoAccountComponent {
     this.pogoAccountsService.createPogoAccount(pogoAccount)
       .subscribe({
         next: () => {
-          this.router.navigateByUrl(['/pogo-accounts'])
+          this.router.navigate(['/pogo-accounts'])
         },
         error: (err) => {
           alert("Failed to create POGO account")
