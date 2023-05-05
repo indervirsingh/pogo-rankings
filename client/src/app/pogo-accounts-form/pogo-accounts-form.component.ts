@@ -11,17 +11,17 @@ import { PogoAccounts } from '../pogo-accounts';
       <!-- Username section -->
       <section class="username-section">
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="username" placeholder="username" formControlName="username" required>
+          <input type="text" class="form-control" id="username" placeholder="Username" formControlName="username" required>
           <label for="username">Username</label>
         </div>
 
         <!-- Error handling for username attribute -->
-        <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger">
+        <div *ngIf="username?.invalid && (username?.dirty || username?.touched)" class="alert alert-danger">
 
-          <div *ngIf="username.errors?.['required']">
+          <div *ngIf="username?.errors?.['required']">
             Username is required.
           </div>
-          <div *ngIf="username.errors?.['minlength']">
+          <div *ngIf="username?.errors?.['minlength']">
             Username must be at least 3 characters long.
           </div>
 
@@ -36,12 +36,12 @@ import { PogoAccounts } from '../pogo-accounts';
           </div>
   
           <!-- Error handling for email attribute -->
-          <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="alert alert-danger">
   
-            <div *ngIf="email.errors?.['required']">
+            <div *ngIf="email?.errors?.['required']">
               Email is required.
             </div>  
-            <div *ngIf="email.errors?.['email']">
+            <div *ngIf="email?.errors?.['email']">
               Email must be a valid email address.
             </div>
           </div>
