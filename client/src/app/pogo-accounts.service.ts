@@ -16,7 +16,7 @@ export class PogoAccountsService {
   constructor(private httpClient: HttpClient) { }
 
   private refreshPogoAccounts() {
-    this.httpClient.get<PogoAccounts[]>(this.pogoAccountsUrl)
+    this.httpClient.get<PogoAccounts[]>(`${this.pogoAccountsUrl}/pogo-accounts`)
       .subscribe(pogoAccounts => {
         this.pogoAccounts$.next(pogoAccounts)
       })
