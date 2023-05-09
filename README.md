@@ -8,7 +8,7 @@
 **Tasks**
 - [x] Convert csv files to table
 - [x] Design JSON Schema (MongoDB)
-- [ ] Implement Database and connect to server
+- [x] Implement Database and connect to server
     - set an ATLAS_URI environment variable (contains the connection string)
     - Build RESTful API router (Express) & implement endpoints for pogoAccounts ('GET', 'POST', 'PUT', 'DELETE')
 - [ ] Categorize data, implement search/sort options
@@ -16,7 +16,6 @@
 
 **VIP key**
 
-[b05f-008d-b10b-486e-bfdb-c466-9a73-3a0c]: #
 [b05f-008d-b10b-486e-bfdb-c466-9a73-3a0c]: #
 
 
