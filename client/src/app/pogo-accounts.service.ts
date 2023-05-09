@@ -9,7 +9,7 @@ import { PogoAccounts } from './pogo-accounts'
 })
 export class PogoAccountsService {
 
-  private pogoAccountsUrl = 'http://localhost:5200/'
+  private pogoAccountsUrl = 'http://localhost:5200'
   private pogoAccounts$: Subject<PogoAccounts[]> = new Subject()
 
 
