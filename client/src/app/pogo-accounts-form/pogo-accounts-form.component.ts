@@ -62,7 +62,7 @@ import { PogoAccounts } from '../pogo-accounts';
           </div>
 
           <div class="form-check">
-            <input class="form-check-input" type="radio" formControlName="team" id="team-valor"Valor="valor"Valor>
+            <input class="form-check-input" type="radio" formControlName="team" id="team-valor" value="valor" required>
             <label class="form-check-label" for="team-valor">Valor</label>
           </div>
 
