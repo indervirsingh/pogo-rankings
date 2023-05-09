@@ -20,6 +20,7 @@ if (process.env.ATLAS_URI) {
 //     console.error("No ATLAS_URI environment variable has been defined in config.env")
 //     process.exit(1)
 // }
+
 ATLAS_URI = "mongodb+srv://indi:kQt4ztXnCJnYj1f6@pogoaccountscluster.oxqfol2.mongodb.net/?retryWrites=true&w=majority"
 
 connectToDatabase(ATLAS_URI)
