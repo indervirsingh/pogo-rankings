@@ -9,14 +9,14 @@ import { PogoAccounts } from './pogo-accounts'
 })
 export class PogoAccountsService {
 
-  private pogoAccountsUrl = 'http://localhost:5200/api'
+  private pogoAccountsUrl = 'http://localhost:5200'
   private pogoAccounts$: Subject<PogoAccounts[]> = new Subject()
 
 
   constructor(private httpClient: HttpClient) { }
 
   private refreshPogoAccounts() {
-    this.httpClient.get<PogoAccounts[]>(this.pogoAccountsUrl)
+    this.httpClient.get<PogoAccounts[]>(`${this.pogoAccountsUrl}/pogo-accounts`)
       .subscribe(pogoAccounts => {
         this.pogoAccounts$.next(pogoAccounts)
       })

@@ -28,14 +28,14 @@ import { PogoAccountsService } from '../pogo-accounts.service'
           <td>{{ pogoAccount.country }}</td>
           <td>{{ pogoAccount.birthday }}</td>
           <td>
-            <button class="btn btn-primary me-1" [routerLink]="['edit/', pogoAccount._id]">Edit</button>
+            <button class="btn btn-primary me-1" [routerLink]="['edit', pogoAccount._id]">Edit</button>
             <button class="btn btn-danger" (click)="deletePogoAccount(pogoAccount._id || '')">Delete</button>
           </td>  
         </tr>
       </tbody>
     </table>
 
-    <button class="btn btn-primary" [routerLink]="['new']">Add a New Account</button>
+    <button class="btn btn-primary mt-3" [routerLink]="['add']">Add a New Account</button>
 
   `,
   styles: [

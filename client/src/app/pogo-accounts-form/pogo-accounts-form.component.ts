@@ -69,6 +69,8 @@ import { PogoAccounts } from '../pogo-accounts';
         </div>
       </section>
       <!-- End Sections -->
+
+      <button class="btn btn-primary" type="submit" [disabled]="pogoAccountsForm.invalid">Add</button>
       
     </form>
   `,

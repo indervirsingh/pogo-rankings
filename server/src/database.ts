@@ -59,7 +59,7 @@ const applySchemaValidation = async (db: mongodb.Db) => {
 await db.command({
   collMod: "pogoAccounts",
   validator: jsonSchema
-  }).catch(async (error: mongodb.MongoServerError) =>{
+  }).catch(async (error: mongodb.MongoServerError) => {
       if (error.codeName === 'NamespaceNotFound') {
         await db.createCollection("pogoAccounts", {validator: jsonSchema})
       }
