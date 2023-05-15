@@ -42,7 +42,6 @@ pogoAccountsRouter.get("/:id", async (req, res) => {
 
 })
 
-
 // Creates a pogoAccount object in the database
 
 pogoAccountsRouter.post("/", async (req, res) => {
