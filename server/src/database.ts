@@ -17,7 +17,6 @@ export const connectToDatabase = async (uri: string) => {
 }
 
 
-
 // Update existing collection with JSON schema validation so our documents match the PogoAccounts model, even if added elsewhere
 const applySchemaValidation = async (db: mongodb.Db) => {
     const jsonSchema = {
