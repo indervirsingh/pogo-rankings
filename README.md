@@ -2,8 +2,8 @@
 
 **PVP Tier List**
 
-> Great League: ==1500CP== 
-> Ultra League: ==2500CP== 
+> Great League: ==1500CP==
+> Ultra League: ==2500CP==
 
 **Tasks**
 - [x] Convert csv files to table
