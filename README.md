@@ -17,4 +17,3 @@
 **VIP key**
 
 [b05f-008d-b10b-486e-bfdb-c466-9a73-3a0c]: #
-[github.com/indervirsingh, softwareindi.com, indervirsingh.github.io]: #
