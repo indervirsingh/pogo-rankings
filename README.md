@@ -1,6 +1,5 @@
 # pogo-rankings
 
-
 **PVP Tier List**
 
 > Great League: ==1500CP==
