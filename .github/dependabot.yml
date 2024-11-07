@@ -7,10 +7,7 @@ version: 2
 updates:
   # Maintain dependencies for node package modules
   - package-ecosystem: "npm"
-    directories:
-      - "/"
-      - "/client"
-      - "/server"
+    directory: "/"
     schedule:
       interval: "daily"
       time: "09:00"
@@ -18,5 +15,34 @@ updates:
       timezone: "America/Tijuana"
     # Raise pull requests for version updates to npm against the `stable` branch
     target-branch: "stable"
+    # Maximum number of PRs allowed
+    open-pull-requests-limit: 10
+
+  - package-ecosystem: "npm"
+    directory: "/client"
+    schedule: 
+      interval: "daily"
+      time: "09:00"
+      # Use America Standard Time (PDT)
+      timezone: "America/Tijuana"
+    # Raise pull requests for version updates to npm against the `stable` branch
+    target-branch: "stable"
+    # Maximum number of PRs allowed
+    open-pull-requests-limit: 10
+
+
+  - package-ecosystem: "npm"
+    directory: "/server"
+    schedule: 
+      interval: "daily"
+      time: "09:00"
+      # Use America Standard Time (PDT)
+      timezone: "America/Tijuana"
+    # Raise pull requests for version updates to npm against the `stable` branch
+    target-branch: "stable"
+    # Maximum number of PRs allowed
+    open-pull-requests-limit: 10
+      
+      
 
       
