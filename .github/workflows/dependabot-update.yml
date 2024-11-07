@@ -15,7 +15,7 @@ jobs:
     steps:
       # Checkout the repository
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       # Trigger Dependabot manually via GitHub API
       - name: Trigger Dependabot update using GitHub API
