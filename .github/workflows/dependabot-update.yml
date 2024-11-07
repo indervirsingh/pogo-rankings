@@ -17,11 +17,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Trigger Dependabot manually via GitHub API
-      - name: Trigger Dependabot update using GitHub API
-        run: |
-          curl -X PUT \
-            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            -d '{"auto_merge":true}' \
-            "https://api.github.com/repos/${{ github.repository }}/dispatches"
+      # Trigger Dependabot updates using the GitHub API
+      - name: Trigger Dependabot update
+        uses: dependabot/fetch-metadata@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
