@@ -1,0 +1,26 @@
+name: Dependency Security Audit
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs weekly
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: npm install
+    - name: Run npm audit
+      run: |
+        npm audit --json > audit-report.json
+        echo "## Dependency Vulnerabilities" > SECURITY.md
+        cat audit-report.json | jq -r '.advisories | to_entries[] | "- \(.value.module_name): \(.value.severity) severity vulnerability"' >> SECURITY.md
+      shell: bash
+    - name: Commit changes
+      run: |
+        git config --local user.name "github-actions"
+        git config --local user.email "github-actions@github.com"
+        git add SECURITY.md
+        git commit -m "Update SECURITY.md with dependency audit results" || echo "No changes to commit"
+        git push
