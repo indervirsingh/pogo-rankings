@@ -18,30 +18,35 @@ updates:
     # Maximum number of PRs allowed
     open-pull-requests-limit: 10
 
+  # Maintain dependencies for frontend (npm, Angular LTS)
   - package-ecosystem: "npm"
     directory: "/client"
-    schedule: 
+    schedule:
       interval: "daily"
       time: "09:00"
-      # Use America Standard Time (PDT)
-      timezone: "America/Tijuana"
-    # Raise pull requests for version updates to npm against the `stable` branch
-    target-branch: "stable"
-    # Maximum number of PRs allowed
-    open-pull-requests-limit: 10
+      timezone: "America/Tijuana"   # Use America Standard Time (PDT)
+    target-branch: "stable"   # Raise pull requests for version updates to npm against the `stable` branch
+    open-pull-requests-limit: 10    # Max number of PRs allowed
+    versioning-strategy: "increase"  # Keeps only minor or patch versions
+    allow:
+      - dependency-type: "direct"   # Only update direct dependencies
+    ignore:   # Ignore updates outside of ^17.3.x for Angular packages
+      - dependency-name: "@angular/*"   # Limit updates to versions within ^17.3.x [LTS ends 2025-05-15]
+        versions: [ "17.3.0" ]
 
 
+  # Maintain dependencies for backend
   - package-ecosystem: "npm"
     directory: "/server"
-    schedule: 
+    schedule:
       interval: "daily"
       time: "09:00"
-      # Use America Standard Time (PDT)
-      timezone: "America/Tijuana"
-    # Raise pull requests for version updates to npm against the `stable` branch
-    target-branch: "stable"
-    # Maximum number of PRs allowed
-    open-pull-requests-limit: 10
+      timezone: "America/Tijuana"   # Use America Standard Time (PDT)
+    target-branch: "stable"   # Raise pull requests for version updates to npm against the `stable` branch
+    open-pull-requests-limit: 10    # Max number of PRs allowed
+    ignore:   # Ignore updates in range of [>=5.2.0 <5.5.0] LTS version compatible with Angular LTS v17.3.x
+      - dependency-name: "typescript"
+        versions: ">=5.2.0 <5.5.0"
       
       
 
