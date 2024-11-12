@@ -3,6 +3,7 @@ name: Dependency Security Audit
 on:
   schedule:
     - cron: '0 0 * * 0'  # Runs weekly
+  workflow_dispatch:  # Allows manual trigger through GitHub CLI or GitHub UI
 
 jobs:
   audit:
