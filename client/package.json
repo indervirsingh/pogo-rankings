@@ -35,8 +35,8 @@
     "@types/node": "^18.13.0 || ^20.9.0",
     "@typescript-eslint/eslint-plugin": "8.14.0",
     "@typescript-eslint/parser": "8.14.0",
-    "eslint": "^9.13.0",
-    "typescript": "=5.2.0 <5.5.0"
+    "eslint": "^8.0.0",
+    "typescript": ">=5.2.0 <5.5.0"
   },
   "resolutions": {
     "**/ip": "https://registry.npmjs.org/neoip/-/neoip-2.1.0.tgz"
