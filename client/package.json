@@ -32,7 +32,7 @@
     "@angular/cli": "~18.2.11",
     "@angular-eslint/template-parser": "18.4.0",
     "@angular/compiler-cli": "^17.3.0",
-    "@types/node": "^18.13.0 || ^20.9.0",
+    "@types/node": "^22.9.0",
     "@typescript-eslint/eslint-plugin": "8.14.0",
     "@typescript-eslint/parser": "8.14.0",
     "eslint": "^8.14.0",
